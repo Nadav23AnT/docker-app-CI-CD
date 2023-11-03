@@ -1,16 +1,13 @@
 # docker-app-CI-CD 
-[ Full CI/CD App with Docker, Jenkins, and Node.js ]
-![Static Badge](https://img.shields.io/badge/Project%20Status-inProgress-orange)
+Full CI/CD App with Terraform, AWS, Docker, Jenkins, and Node.js 
 
-![Project Logo](project-logo.png)
+![Static Badge](https://img.shields.io/badge/completed-green)
 
 ## Table of Contents
 
 - [Description](#description)
 - [Key Features](#key-features)
 - [Getting Started](#getting-started)
-- [Documentation](#documentation)
-- [License](#license)
 
 ## Description
 
@@ -32,8 +29,55 @@ This GitHub repository is a demonstration of a CI/CD pipeline for a Node.js appl
 
 ## Getting Started
 
-To get started with this project, follow the setup instructions in the [documentation](documentation.md). You'll need to have Docker, Jenkins, and Node.js installed on your development machine or server.
 
-## Documentation
+Follow these simple steps to set up Jenkins using Terraform for automated pipeline deployments:
 
-For detailed instructions on setting up and using this CI/CD pipeline, please refer to the [documentation](documentation.md).
+### Step 1: Initialize Terraform
+
+```bash
+terraform init
+```
+
+This command initializes your Terraform environment and prepares it for further configuration.
+
+### Step 2: Create a Terraform Plan
+
+```bash
+terraform plan
+```
+
+Generate a Terraform plan to review the changes that will be made during the setup.
+
+### Step 3: Apply the Configuration
+
+```bash
+terraform apply -y
+```
+
+Apply the configuration to create the necessary resources on your cloud provider. The `-y` flag will automatically approve the changes.
+
+### Step 4: Configure Jenkins
+
+1. Access your EC2 instance created by Terraform.
+2. Log in to your Jenkins account.
+3. Configure the Jenkins pipeline using the "jenkins_pipeline.groovy" script.
+
+### Step 4.1: Set Up GitHub Webhook (in Jenkins)
+
+To enable automated pipeline triggers from your GitHub repository, configure a webhook:
+
+1. In your GitHub repository, navigate to "Settings" > "Webhooks."
+2. Click "Add webhook" and provide the necessary details.
+3. Set the Payload URL to your Jenkins server webhook endpoint.
+4. Choose the events you want to trigger the webhook.
+5. Save the webhook configuration.
+
+### Step 4.2: Configure Docker Credentials (in Jenkins)
+
+1. In Jenkins, navigate to "Manage Jenkins" > "Manage Credentials."
+2. Click "Global credentials."
+3. Add Docker credentials for your registry or container repository.
+
+Your Jenkins setup is now ready to automate your CI/CD pipeline. Happy coding! 🚀
+
+Feel free to modify and expand upon this README as needed for your specific project.
