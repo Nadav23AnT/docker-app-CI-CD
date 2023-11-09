@@ -2,6 +2,7 @@
 Full CI/CD App with Terraform, AWS, Docker, Jenkins, and Node.js 
 
 ![Static Badge](https://img.shields.io/badge/completed-green)
+![project-docker-app-CICD](https://github.com/Nadav23AnT/docker-app-CI-CD/assets/71144691/07086082-8cac-4ca1-8ce0-d70b8d199d5c)
 
 ## Table of Contents
 
